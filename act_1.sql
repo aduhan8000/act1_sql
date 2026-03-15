@@ -1,39 +1,20 @@
-CREATE TABLE IF NOT EXISTS Salesman(
-    Salesman_id TEXT PRIMARY KEY,
-    name TEXT,
-    city TEXT,
-    Commision REAL
+CREATE TABLE IF NOT EXISTS STUDENT(
+    ROLL_NO TEXT PRIMARY KEY,
+    NAME TEXT NOT NULL,
+    ADDRESS TEXT,
+    PHONE TEXT,
+    AGE INTEGER
 );
 
-INSERT INTO Salesman (Salesman_id,name,city,Commision) VALUES 
-('5001','James Hong','New York',0.15)
-('5002','James Smith','New Jersey',0.3)
-('5005','Pit Alex','London',0.11)
-('5006', 'Mc Lyon', 'Paris',0.14)
-('5007','Paul Adamn','Rome',0.13)
-('5003','Lausen Hen','San Jose',0.12);
-SELECT * FROM Salesman;
-CREATE TABLE IF NOT EXISTS Orders (
-    ord_no TEXT PRIMARY KEY ,
-    purch_amt REAL,
-    ord_date TEXT,
-    customer_id TEXT,
-    Salesman_id TEXT
-);
-INSERT INTO Orders (ord_no,purch_amt,ord_date,customer_id,Salesman_id)VALUES
-('70001',150.5, '2022-10-5','3005','5002'),
-('70009',270.5, '2022-10-5','3001','5001'),
-('70002',65.26,'2012-10-05','3002','5003'),
-('70004',110.5,'2012-08-17','3007','5005'),
-('70007',948.5,'2012-09-10','3005','5005'),
-('70005',2400.6,'2012-07-27','3007','5006');
-SELECT * FROM Orders;
-
-SELECT name,Comission
-FROM Salesman;
-
-
-
-
-
-
+INSERT INTO STUDENT (ROLL_NO,NAME,ADDRESS,PHONE,AGE) VALUES
+('1','RAM','DELHI','******',18),
+('2','RAMESH','GURGAON','******',18),
+('3','SUJIT','ROHTAK','******',20),
+('4','SURESH','DELHI','******',18),
+('5','AMAN','ROHTAK','******',20),
+('6','HARSH','GURGAON','******',18);
+SELECT * FROM STUDENT;
+SELECT * FROM STUDENT WHERE AGE=18 AND ADDRESS='DELHI';
+SELECT * FROM STUDENT WHERE AGE=18 AND NAME='RAM';
+SELECT * FROM STUDENT WHERE NAME='RAM' OR AGE='20';
+SELECT * FROM STUDENT WHERE AGE=18 AND (NAME='RAM' OR NAME='RAMESH');
